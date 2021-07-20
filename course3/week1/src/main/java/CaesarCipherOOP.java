@@ -1,13 +1,19 @@
-public class CaesarCipher {
-    public String encrypt(String input, int key) {
+public class CaesarCipherOOP {
+    private final String alphabet;
+    private final String shiftedAlphabet;
+    private final int mainKey;
+
+    public CaesarCipherOOP(int key) {
+        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        shiftedAlphabet = alphabet.substring(key) + alphabet.substring(0, key);
+        mainKey = key;
+    }
+
+    public String encrypt(String input) {
         //Make a StringBuilder with message (encrypted)
         StringBuilder encrypted = new StringBuilder(input);
-        //Write down the alphabet
-        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         //make the lower case version of the alphabet
         String alphabetLower = alphabet.toLowerCase();
-        //Compute the shifted alphabet
-        String shiftedAlphabet = alphabet.substring(key) + alphabet.substring(0, key);
         //Make a lower case version of the shifted alphabet
         String shiftedLower = shiftedAlphabet.toLowerCase();
         //Count from 0 to < length of encrypted, (call it i)
@@ -25,7 +31,6 @@ public class CaesarCipher {
                 //Replace the ith character of encrypted with newChar
                 encrypted.setCharAt(i, newChar);
             }
-
             //Otherwise: check if currChar is in the lowercase alphabet
             else if (idxLower != -1) {
                 //get the idxUpperth character of shifted lowerAlphabet
@@ -39,25 +44,12 @@ public class CaesarCipher {
         return encrypted.toString();
     }
 
-    public void testCaesar() {
-        /*int key = 17;
-        FileResource fr = new FileResource();
-        String message = fr.asString();
-        String encrypted = encrypt(message, key);
-        System.out.println(encrypted);
-        String decrypted = encrypt(encrypted, 26-key);
-        System.out.println(decrypted);
-        */
-        System.out.println("Testing the encryption to handle upper and lower case");
-        System.out.println("Inputting 'First Legion' with the key 23");
-        System.out.println();
-        System.out.println("Result should be Cfopq Ibdflk.  Result is " + encrypt("First Legion", 23));
-        System.out.println();
-
-        System.out.println("Quiz question #5, encrypt with the key 15 of 'At noon be in the conference room with your hat on for a surprise party. YELL LOUD!'");
-        System.out.println("Result is: \n" + encrypt("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!", 15));
+    public String decrypt(String input) {
+        CaesarCipherOOP ccOO = new CaesarCipherOOP(26 - mainKey);
+        return ccOO.encrypt(input);
 
     }
+
 
     public String encryptTwoKeys(String input, int key1, int key2) {
         //Make a StringBuilder with message (encrypted)
@@ -115,21 +107,13 @@ public class CaesarCipher {
         System.out.println("Expected result is Czojq Ivdzle");
         System.out.println();
         System.out.println("Testing encryptTwoKeys...");
-        System.out.println("Result is " + encryptTwoKeys("First Legion", 23, 17));
+        System.out.println("Result is \n" + encryptTwoKeys("First Legion", 23, 17));
         System.out.println();
 
         System.out.println("Quiz question #6, encrypt with two keys, key1 = 8 and key2 = 21");
         System.out.println("String being encrypted is 'At noon be in the conference room with your hat on for a surprise party. YELL LOUD!'");
-        System.out.println("Result is: \n" + encryptTwoKeys("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!", 8, 21));
+        System.out.println("Result is \n" + encryptTwoKeys("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!", 8, 21));
 
     }
 
-    public static void main(String[] args) {
-        CaesarCipher caesarCipher = new CaesarCipher();
-
-//        caesarCipher.testCaesar();
-
-        caesarCipher.testEncryptTwoKeys();
-
-    }
 }
