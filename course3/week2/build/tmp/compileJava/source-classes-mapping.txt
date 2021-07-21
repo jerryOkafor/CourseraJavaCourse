@@ -1,7 +1,7 @@
 GladLib.java
  GladLib
-WordsInFiles.java
- WordsInFiles
+CharactersInPlay.java
+ CharactersInPlay
 WordFrequencies.java
  WordFrequencies
 CodonCount.java
@@ -10,5 +10,5 @@ WordFrequenciesMap.java
  WordFrequenciesMap
 GladLibMap.java
  GladLibMap
-CharactersInPlay.java
- CharactersInPlay
+WordsInFiles.java
+ WordsInFiles

@@ -65,7 +65,7 @@ public class CharactersInPlay {
         findAllCharacters();
         System.out.println("Finding all characters...");
 
-        charactersWithNumParts(10, 15);
+        charactersWithNumParts(70, 99);
         int maxIndex = findIndexOfMax();
         System.out.println("Most number of parts is: " + nameCounts.get(maxIndex) + " by the character " + names.get(maxIndex));
     }

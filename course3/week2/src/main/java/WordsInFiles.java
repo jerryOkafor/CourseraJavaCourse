@@ -94,7 +94,7 @@ public class WordsInFiles {
 //        int number = maxNumber();
         int count = 0;
         int number = 4;
-        //int number = 7;
+//        int number = 7;
         for (String w : map.keySet()) {
             if (map.get(w).size() == number) {
                 System.out.println("Word(s) with most file appearances:\n" + w);
@@ -124,7 +124,7 @@ public class WordsInFiles {
             System.out.println(s);
         }
 
-        String red = "red";
+        String red = "laid";
         System.out.println("Files where the word " + red + " appears in:\n");
         for (String s : map.get(red)) {
             System.out.println(s);
@@ -137,4 +137,5 @@ public class WordsInFiles {
         wordsInFiles.tester();
     }
 }
+
 
