@@ -3,8 +3,7 @@ plugins {
     kotlin("jvm")
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+group = "edu.duke.course4.week1"
 
 repositories {
     mavenCentral()
