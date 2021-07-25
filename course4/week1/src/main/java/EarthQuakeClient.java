@@ -68,8 +68,8 @@ public class EarthQuakeClient {
 
     public void bigQuakes() {
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
-//        String source = Tester.dataDir + "/data/nov20quakedata.atom";
-        String source = EarthQuakeClientTester.dataDir + "/data/nov20quakedatasmall.atom";
+//        String source = EarthQuakeClientTester.dataDir + "/data/nov20quakedatasmall.atom";
+        String source = EarthQuakeClientTester.dataDir + "/data/nov20quakedata.atom";
         ArrayList<QuakeEntry> list = parser.read(source);
         System.out.println("read data for " + list.size() + " quakes");
 
@@ -82,8 +82,15 @@ public class EarthQuakeClient {
         */
 
         ArrayList<QuakeEntry> listBig = filterByMagnitude(list, 5.0);
+        Collections.sort(listBig);
+        Collections.reverse(listBig);
         for (QuakeEntry qe : listBig) {
             System.out.println(qe);
+        }
+
+        System.out.println("Found " + listBig.size() + " quakes that match that criteria");
+        if (listBig.size() > 50) {
+            System.out.println("50 th Quake " + listBig.get(49));
         }
     }
 
@@ -116,9 +123,9 @@ public class EarthQuakeClient {
         System.out.println("# quakes read: " + list.size());
 
 //        double minDepth = -10000.0;
-        double minDepth = -10000.0;
+        double minDepth = -4000.0;
 //        double maxDepth = -5000.0;
-        double maxDepth = -8000.0;
+        double maxDepth = -2000.0;
 
         System.out.printf("Find quakes with depth between %.2f and %.2f", minDepth, maxDepth);
         System.out.println();
@@ -141,12 +148,14 @@ public class EarthQuakeClient {
 
 //        String where = "end";
 //        String where = "start";
-
         String where = "any";
 
 //        String phrase = "California";
 //        String phrase = "Explosion";
-        String phrase = "Creek";
+//        String phrase = "Creek";
+//        String phrase = "Quarry Blast";
+//        String phrase = "Alaska";
+        String phrase = "Can";
 
         System.out.printf("Find quakes with position %s and phrase %s", where, phrase);
         System.out.println();

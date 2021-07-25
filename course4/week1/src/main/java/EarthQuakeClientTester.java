@@ -4,9 +4,9 @@ public class EarthQuakeClientTester {
 
     public static void main(String[] args) {
         EarthQuakeClient client = new EarthQuakeClient();
-//        client.bigQuakes();
+        client.bigQuakes();
 //        client.closeToMe();
 //        client.quakesOfDepth();
-        client.quakesByPhrase();
+//        client.quakesByPhrase();
     }
 }

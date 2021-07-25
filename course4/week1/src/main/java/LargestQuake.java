@@ -18,6 +18,8 @@ public class LargestQuake {
         }
 
         System.out.println("Found " + largest.size() + " quakes that match that criteria");
+        System.out.println("20th Quake " + largest.get(19));
+        System.out.println("20th Quake " + largest.get(49));
 
     }
 
