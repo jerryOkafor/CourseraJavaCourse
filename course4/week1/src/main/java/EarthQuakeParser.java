@@ -15,7 +15,7 @@ public class EarthQuakeParser {
         // TODO Auto-generated constructor stub
     }
 
-    public ArrayList<QuakeEntry> read(String source) {
+    public ArrayList<QuakeEntry>read(String source) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
         try {

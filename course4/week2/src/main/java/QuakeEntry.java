@@ -1,10 +1,9 @@
-
 public class QuakeEntry implements Comparable<QuakeEntry> {
 
-    protected final Location myLocation;
-    protected final String title;
-    protected final double depth;
-    protected final double magnitude;
+    private final Location myLocation;
+    private final String title;
+    private final double depth;
+    private final double magnitude;
 
     public QuakeEntry(double lat, double lon, double mag,
                       String t, double d) {
@@ -33,18 +32,12 @@ public class QuakeEntry implements Comparable<QuakeEntry> {
 
     @Override
     public int compareTo(QuakeEntry loc) {
-        double difflat = myLocation.getLatitude() - loc.myLocation.getLatitude();
-        if (Math.abs(difflat) < 0.001) {
-            double diff = myLocation.getLongitude() - loc.myLocation.getLongitude();
-            if (diff < 0) return -1;
-            if (diff > 0) return 1;
-            return 0;
+        if (Double.compare(magnitude, loc.getMagnitude()) == 0) {
+            double depth1 = depth;
+            double depth2 = loc.getDepth();
+            return Double.compare(depth1, depth2);
         }
-        if (difflat < 0) return -1;
-        if (difflat > 0) return 1;
-
-        // never reached
-        return 0;
+        return Double.compare(magnitude, loc.getMagnitude());
     }
 
     public String toString() {
