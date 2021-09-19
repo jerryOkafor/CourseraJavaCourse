@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/capstone" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/course3" />
             <option value="$PROJECT_DIR$/course3/week1" />
@@ -18,6 +19,8 @@
             <option value="$PROJECT_DIR$/course4" />
             <option value="$PROJECT_DIR$/course4/week1" />
             <option value="$PROJECT_DIR$/course4/week2" />
+            <option value="$PROJECT_DIR$/course4/week3" />
+            <option value="$PROJECT_DIR$/course4/week4" />
           </set>
         </option>
       </GradleProjectSettings>
