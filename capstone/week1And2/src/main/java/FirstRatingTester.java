@@ -6,7 +6,7 @@
  */
 public class FirstRatingTester {
     public static void main(String[] args) {
-        FirstRating firstRating = new FirstRating();
+        FirstRatings firstRating = new FirstRatings();
         firstRating.testLoadMovies();
         firstRating.testLoadRaters();
     }

@@ -2,7 +2,7 @@ plugins {
     java
     kotlin("jvm")
 }
-group = "edu.duke.capstone"
+group = "edu.duke.capston.step5"
 
 repositories {
     mavenCentral()
